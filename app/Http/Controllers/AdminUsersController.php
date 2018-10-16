@@ -208,14 +208,22 @@ class AdminUsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+
     public function destroy($id)
     {
-        //
+
+        //$user = User::findOrFail($id);
+        //$file_name = $_GET['name'];
+        //chdir($this->laravel->publicPath());
+//        $file_delete = dirname('C:/xampp/htdocs/codehacking/public/images/'). '/images/' . $user->photo->file;
+//        unlink($file_delete);
 
         $user = User::findOrFail($id);
 
 
-        unlink(public_path("images\\") . $user->photo->file);
+        unlink(public_path("images") . $user->photo->file);
 
 
         $user->delete();
