@@ -180,9 +180,33 @@ class AdminPostsController extends Controller
     {
         //
 
+        //$post = Post::findOrFail($id);
+
+//        if ($deleted = Post::delete('public/images/' . $product . '/'. $post->photo->file))
+//        {
+//            $status = $image->delete();
+//
+//            if ($status)
+//            {
+//                return 'deleted from database and file system';
+//            }
+//
+//            return 'Not deleted from database';
+//        }
+//
+//        return 'Unsuccessful operation';
+//    }
+
+
+//        if(file_exists(public_path('images'))){
+//            unlink(public_path('images'). DIRECTORY_SEPARATOR . $post->photo->file);
+//        }else{
+//            dd('File does not exists.');
+//        }
+
         $post = Post::findOrFail($id);
 
-        unlink(public_path() . $post->photo->file);
+        unlink(public_path("images") . '/' . $post->photo->file);
 
         $post->delete();
 
