@@ -39,7 +39,7 @@ class AdminMediasController extends Controller
 
     public function store(Request $request){
 
-
+        //Guardar as imagens
         $file = $request->file('file');
 
 

@@ -114,7 +114,7 @@
                                 <img height="64" class="media-object" src="{{$reply->photo}}" alt="">
                             </a>
                             <div class="media-body">
-                                <h4 class="media-heading"{{$reply->author}}
+                                <h4 class="media-heading"{{$reply->author}}>
                                     <small>{{$reply->created_at->diffForHumans()}}</small>
                                 </h4>
                                 <p>{{$reply->body}}</p>

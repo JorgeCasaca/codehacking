@@ -4,16 +4,16 @@ namespace App;
 
 
 
-use Cviebrock\EloquentSluggable\Sluggable;
+//use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+//use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
 class Post extends Model
 {
     //
 
-    use Sluggable;
-    use SluggableScopeHelpers;
+    //use Sluggable;
+    //use SluggableScopeHelpers;
 
 
 
