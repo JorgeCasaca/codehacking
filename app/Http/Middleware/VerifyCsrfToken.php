@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Closure;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;
 
 class VerifyCsrfToken extends BaseVerifier
@@ -11,6 +12,17 @@ class VerifyCsrfToken extends BaseVerifier
      *
      * @var array
      */
+
+//    public function handle($request, Closure $next)
+//    {
+//        if ($this->isReading($request) || $this->tokensMatch($request)) {
+//            return $this->addCookieToResponse($request, $next($request));
+//        }
+//
+//        return redirect("/")->with("alert", "error message to user interface");
+//        #throw new TokenMismatchException;
+//    }
+
     protected $except = [
         //
     ];

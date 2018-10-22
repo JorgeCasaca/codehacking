@@ -214,6 +214,7 @@ class AdminUsersController extends Controller
     public function destroy($id)
     {
 
+        //Experiencia 1
         //$user = User::findOrFail($id);
         //$file_name = $_GET['name'];
         //chdir($this->laravel->publicPath());
@@ -222,11 +223,19 @@ class AdminUsersController extends Controller
 
         $user = User::findOrFail($id);
 
+        $image_path = "/images/";  // Value is not URL but directory file path
 
-        unlink( public_path(). "images" . $user->photo->file);
-
-
-        $user->delete();
+        if(User::exists($image_path)) {
+            $user->delete($image_path);
+        }
+        //Experiencia 2
+//        $user = User::findOrFail($id);
+//
+//
+//        unlink( public_path("images") . $user->photo->file);
+//
+//
+//        $user->delete();
 
 
         Session::flash('deleted_user','The user has been deleted');

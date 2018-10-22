@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 
 class AdminPostsController extends Controller
@@ -179,7 +180,7 @@ class AdminPostsController extends Controller
     public function destroy($id)
     {
         //
-
+        //Experiencia1
         //$post = Post::findOrFail($id);
 
 //        if ($deleted = Post::delete('public/images/' . $product . '/'. $post->photo->file))
@@ -197,7 +198,7 @@ class AdminPostsController extends Controller
 //        return 'Unsuccessful operation';
 //    }
 
-
+        //Experiencia 2
 //        if(file_exists(public_path('images'))){
 //            unlink(public_path('images'). DIRECTORY_SEPARATOR . $post->photo->file);
 //        }else{
@@ -206,9 +207,20 @@ class AdminPostsController extends Controller
 
         $post = Post::findOrFail($id);
 
-        unlink(public_path("images") . '/' . $post->photo->file);
+        $image_path = "/images/";  // Value is not URL but directory file path
 
-        $post->delete();
+        if(Post::exists($image_path)) {
+            $post->delete($image_path);
+        }
+
+        //Experiencia 3
+//        $post = Post::findOrFail($id);
+//
+//        unlink(public_path("images") . '/' . $post->photo->file);
+//
+//        $post->delete();
+
+        Session::flash('deleted_user','The user has been deleted');
 
         return redirect('/admin/posts');
 
