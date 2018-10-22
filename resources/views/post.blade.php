@@ -130,7 +130,7 @@
                                 <div class="comment-reply col-sm-6">
 
 
-                                        {!! Form::open(['method'=>'POST', 'action'=> 'CommentRepliesController@createReply']) !!}
+                                        {!! Form::open(['method'=>'POST', 'action'=> 'CommentRepliesController@create']) !!}
                                              <div class="form-group">
 
                                                  <input type="hidden" name="comment_id" value="{{$comment->id}}">

@@ -46,16 +46,16 @@ class CommentRepliesController extends Controller
     public function createReply(Request $request){
 
 
-        $user = Auth::user();
-
-
-        $data = [
-
-            'comment_id' => $request->comment_id,
-            'author'=> $user->name,
-            'email' =>$user->email,
-            'photo'=>$user->photo->file,
-            'body'=>$request->body
+//        $user = Auth::user();
+//
+//
+//        $data = [
+//
+//            'comment_id' => $request->comment_id,
+//            'author'=> $user->name,
+//            'email' =>$user->email,
+//            'photo'=>$user->photo->file,
+//            'body'=>$request->body
 
 
         ];
